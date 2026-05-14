@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My First Docker App</title>
+  </head>
+  <body style="font-family: sans-serif; text-align: center; margin-top: 100px">
+    <h1>My First Docker App 🐳</h1>
+    <button onclick="handleClick()" style="padding: 12px 24px; font-size: 16px">
+      Click me!
+    </button>
+    <p id="response"></p>
+    <script>
+      async function handleClick() {
+        const res = await fetch("/click", { method: "POST" });
+        const data = await res.json();
+        document.getElementById("response").textContent = data.message;
+      }
+    </script>
+  </body>
+</html>
